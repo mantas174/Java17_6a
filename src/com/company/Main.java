@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,6 +14,26 @@ public class Main {
         //            Random rand = new Random();
         //int randomNumber  = rand.nextInt(10) + 1;
 
+        Scanner in = new Scanner(System.in);
+        int skaicius;
+        Random rand = new Random();
+        int atsitiktinisSkaicius = rand.nextInt(10) + 1;
+        boolean arTesti = true;
 
+
+
+        do {
+            System.out.println("Atsitiktinis skaicius " + atsitiktinisSkaicius);
+
+            System.out.print("Iveskite skaiciu: ");
+            skaicius = in.nextInt();
+
+            if(skaicius == 0 || skaicius == atsitiktinisSkaicius){
+                arTesti = false;
+                System.out.println("Pabagia");
+            }
+
+            atsitiktinisSkaicius = rand.nextInt(10) + 1;
+        }while(arTesti);
     }
 }
